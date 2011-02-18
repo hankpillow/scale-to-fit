@@ -22,8 +22,10 @@ package
 			b.graphics.drawRect(0,0,512,288)
 			b.graphics.endFill()
 
-			//resize(a).toFitIn(b);
-			//resize(a).toFitIn(b);
+			resize(a).toFitIn(b);
+			
+			//using the lower value.
+			//resize(a).toFitIn(b,true);
 
 			//resize(a,{width:160,height:90}).multipleOf(16).toFitIn(b);
 
