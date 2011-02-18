@@ -33,6 +33,7 @@ resize(a).multipleOf( 16 ).toFitIn(b);
 If you are that guy who loves doing this scale using *"tween"*, I did a method for you:
 
 <code>
-var r : Rectangle = resize(a).simulate().toFitIn(b).bounds
+var r : Rectangle = resize(a).simulate().toFitIn(b).bounds;
+
 Tweener.addTween( a, {width:r.width, height:r.height, time:0.5} );
 </code>
