@@ -1,3 +1,7 @@
+/**
+*	This is just a wrapper for new ScaleToFit(...args)
+*	@author igor almeida
+**/
 package redneck.display.resize
 {
 	import redneck.display.resize.ScaleToFit;
@@ -6,4 +10,3 @@ package redneck.display.resize
 		return new ScaleToFit( value, bounds );
 	}
 }
-

@@ -31,7 +31,7 @@ package redneck.display.resize
 
 			if (!p_to_resize || p_to_resize is Stage || !p_to_resize.hasOwnProperty("width") || !p_to_resize.hasOwnProperty("height"))
 			{
-				throw new Error("Invalid param. It cant be null or Stage.")
+				throw new Error("Invalid param. It can't be null or Stage.")
 				return;
 			}
 
