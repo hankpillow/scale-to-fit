@@ -1,6 +1,10 @@
 /**
 *	@author: igor almeida
-*	@version: 1.2;
+*	@version: 1.3;
+*	CHANGE LOG:
+*	
+*	- 1.3: import fix on <code>toFitIn</code> when a Stage is given.
+*
 */
 package redneck.display.resize
 {	
@@ -92,20 +96,24 @@ package redneck.display.resize
 		*/
 		public function toFitIn( p_reference:Object, crop : Boolean = false ) : ScaleToFit
 		{
-			if (!p_reference || p_reference is Stage || !p_reference.hasOwnProperty("width") || !p_reference.hasOwnProperty("height"))
-			{
+			if (p_reference==null){
 				throw new Error("Invalid parameter");
-				return;
+				return null
 			}
 
-			var reference : Rectangle = new Rectangle
-				reference.width = p_reference.width;
-				reference.height = p_reference.height;
+			const reference : Rectangle = new Rectangle;
 
-			if (p_reference is Stage)
-			{
+			if (p_reference is Stage){
 				reference.width = p_reference.stageWidth;
 				reference.height = p_reference.stageHeight;
+			}
+			else if (p_reference.hasOwnProperty("width") && p_reference.hasOwnProperty("height") ){
+				reference.width = p_reference.width;
+				reference.height = p_reference.height;
+			}
+			else{
+				throw new Error("Invalid parameter");
+				return null;
 			}
 
 			_bounds = new Rectangle( to_resize.x, to_resize.y );
